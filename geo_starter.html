@@ -11,6 +11,17 @@
 	} else {  
 	  alert("I'm sorry, but geolocation services are not supported by your browser.");  
 	}
+      $(document).ready(function () {
+          // wire up button click
+          $('#go').click(function () {
+              // test geolocation
+              if (navigator && navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(geo_success, geo_error);
+              } else {
+                    error('Geolocation is not supported.');
+              }
+           });
+       });
 	</script>
 	
 	
